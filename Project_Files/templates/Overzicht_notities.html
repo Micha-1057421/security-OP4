@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+        <title>Test-Correct</title>
+        <link rel="icon" type="image/x-icon" href="https://welcome.test-correct.nl/img/icons/Logo-Test-Correct-recolored-icon-only.svg">
+        <link rel="stylesheet" href="../static/overzicht.css" type="text/css">
+</head>
+<body>
+     {% include 'navbar1.html' %}
+     {% include 'navbar2.html' %}
+
+    <div class="search-container">
+            <form class="search-input" role="search">
+                <input class="form-controle" type="search" placeholder="Search">
+                <button class="button-search" type="submit">Search</button>
+                <a href="/create" class="button-nieuwe-notitie">Nieuwe Notitie</a>
+                <button class="button-Filter">Filter</button>
+            </form>
+    </div>
+
+<a href="/adminpage" class="button-nieuwe-notitie">admin page</a>
+<a href="/categories/" class="button-nieuwe-notitie">categories</a>
+
+<a href="{{ url_for('download_alle_notities') }}" class="button-download-alle" download>
+    <img src="../static/download_alle_button.png" alt="Download alle notities" class="download-alle-img">
+</a>
+
+{% block content%}
+    {% if notes %}
+        <div class="notes-container">
+            <p>Aantal Notities: {{ aantal_notities }}</p>
+                {% for note in notes %}
+                    <form class='note' method="POST" action="{{ url_for ('delete_note', note_id=note[0]) }}">
+                        <a href="{{ url_for('see_note', note_id=note[0]) }}"><h3>Titel: {{ note[2] }}</h3></a>
+                        <p>Categorie: {{ note[6] }}</p>
+                        <p>Leraar: {{ note[4] }}</p>
+                        <p>Aangemaakt op: {{ note[5] }}</p>
+
+                        <a href="{{ url_for('download_notitie', note_id=note[0]) }}" class="button-download" download>
+                            <img src="../static/download_button.png" alt="Download alle notities" class="download-img">
+                        </a>
+
+                        <button type="submit" class="button-delete">
+                            <img src="../static/delete_button.png" alt="verwijder" class="delete-img">
+                        </button>
+                        <a href="{{ url_for('edit_note', note_id=note[0]) }}" class="button-edit">
+                            <img src="../static/edit_button.png" alt="bewerken" class="delete-img">
+                        </a>
+                        <input type="hidden" name="note_id" value="{{ note[0] }}">
+                    </form>
+                {% endfor %}
+            </div>
+
+            {% if page > 1 %}
+                <a href="?page={{page-1}}" >Vorige pagina </a>
+            {% endif %}
+            {% if total_notes > page * per_page %}
+                <a href="?page={{ page + 1 }}" > Volgende pagina</a>
+            {%endif%}
+        </div>
+    {% else %}
+        <div>No notes available.</div>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

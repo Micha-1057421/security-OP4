@@ -1,0 +1,42 @@
+<head>
+    <link rel="stylesheet" href="../static/maaknotitie.css" type="text/css">
+    <title>Test-Correct</title>
+    <link rel="icon" type="image/x-icon" href="https://welcome.test-correct.nl/img/icons/Logo-Test-Correct-recolored-icon-only.svg">
+</head>
+
+ {% include 'navbar1.html' %}
+ {% include 'navbar2.html' %}
+
+<h1>{% block title %} Nieuwe Notitie {% endblock %}</h1>
+<form method="post">
+    <label for= "title">Titel</label>
+    <br>
+    <input type="text" name="title"
+               placeholder="Titel"
+               value="{{ request.form['title'] }}" required> </input>
+    <br>
+    <br>
+
+    <label for='note'>Inhoud notitie</label>
+    <br>
+    <textarea name="note" required
+                  placeholder="Inhoud"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['note'] }}</textarea>
+    <br>
+    <label for= "note_source">source</label>
+    <br>
+    <input type="text" name="note_source"
+               placeholder="note_source"
+               value="{{ request.form['note_source'] }}" required> </input>
+    <br>
+    <br>
+    <select name="categorie" required>
+        {% for categorie in categories %}
+        <option value="{{ categorie[0] }} ">{{ categorie[1] }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Toevoegen</button>
+</form>
+

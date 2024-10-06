@@ -1,0 +1,188 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url("../static/fonts/Nunito-Regular.ttf");
+    src: url("../static/fonts/Nunito-Bold.ttf")
+}
+
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Nunito';
+    justify-content: space-evenly;
+}
+
+.teachers-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Nunito';
+    justify-content: space-evenly;
+}
+
+.gebruiker {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid;
+    width: 100%;
+    font-family: 'Nunito';
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.note {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid;
+    width: 100%;
+    font-family: 'Nunito';
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+body {
+  margin: 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+.button-nieuwe-notitie {
+  background-color: #4075ea;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  font-family: 'Nunito';
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0 30px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: text;
+
+}
+
+.form-controle,
+.button-search,
+.button-Filter {
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 30px;
+  font-family: 'Nunito';
+  margin: 0 10px;
+  padding: 0 30px;
+}
+
+
+.form-controle {
+  flex: 1;
+}
+
+.button-search {
+  background-color: #3DBB57;
+  color: #FFFFFF;
+}
+
+.button-Filter {
+  background-color: #3DBB57;
+  color: #FFFFFF;
+}
+
+section h3 {
+  font-family: "Nunito";
+  font-size: 30px;
+  text-align: center;
+}
+section p {
+  font-size: 20px;
+  font-family: 'Nunito';
+  margin-left: 25%;
+}
+
+.Layout_Notities {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-family: 'Nunito';
+}
+
+.button-delete {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    padding-right: 20px;
+}
+.button-edit {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    padding-right: 20px;
+    margin-top: 15px;
+}
+
+.delete-img {
+    width: 30px;
+    height: 30px;
+}
+.selectieboxen-notities {
+    border: none;
+    padding-right: 50px;
+    position: absolute;
+    margin-left: -13px;
+}
+.note:nth-child(even) {
+  background-color: white;
+}
+
+.note:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.button-download{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    padding-right: 20px;
+    margin-top: 15px;
+}
+
+.download-img {
+    width: 30px;
+    height: 30px;
+}
+
+.button-download-alle{
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    padding-right: 20px;
+    margin-top: 15px;
+}
+
+.download-alle-img {
+    width: 90px;
+    height: 40px;
+}

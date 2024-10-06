@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Bewerk Categorie</title>
+    <link rel="stylesheet" href="../static/categoriesstyle.css" type="text/css">
+</head>
+<body>
+{% include 'navbar1.html' %}
+{% include 'navbar2.html' %}
+    <h1>Bewerk Categorie</h1>
+    <form method="POST" action="{{ url_for('bewerk_categorie', category_id=category.category_id) }}">
+        <label for="new_omschrijving" class="label-new-omschrijving">Nieuwe Omschrijving:</label>
+        <input type="text" id="new_omschrijving" name="new_omschrijving" value="{{ category.omschrijving }}" required>
+        <button type="submit">Opslaan</button>
+    </form>
+</body>
+</html>

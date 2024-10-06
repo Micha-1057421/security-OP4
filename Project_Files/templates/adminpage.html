@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+        <title>Test-Correct</title>
+        <link rel="icon" type="image/x-icon" href="https://welcome.test-correct.nl/img/icons/Logo-Test-Correct-recolored-icon-only.svg">
+        <link rel="stylesheet" href="../static/admin_page.css" type="text/css">
+</head>
+<body>
+    {% include 'navbar1.html' %}
+    {% include 'navbar2.html' %}
+
+<form class="gebruiker" method="post" action="/adminpage/">
+    <h1>Account aanmaken voor docenten</h1>
+    <br>
+    <label for= "username">Gebruikersnaam</label>
+    <br>
+    <input type="text" name="username" required
+            placeholder="Gebruikersnaam"
+            value="{{ username }}"> </input>
+    <br>
+    <label for= "teacher_password">Wachtwoord</label>
+    <br>
+    <input type="text" name="teacher_password" required
+            placeholder="Wachtwoord"
+            value="{{ teacher_password }}"> </input>
+    <br>
+    <label for= "display_name">Display naam</label>
+    <br>
+    <input type="text" name="display_name" required
+            placeholder="Display naam"
+            value="{{ display_name }}">
+    <br>
+    <button type="submit" class = 'aanmaken-teacher'> Aanmaken  </button>
+
+</form>
+
+{% block content %}
+    {% if gebruikers %}
+        <div class="teachers-container">
+            {% for gebruiker in gebruikers %}
+            <form class='gebruiker' method="POST" action="{{ url_for ('delete_teacher', teacher_id=gebruiker[3]) }}">
+                <h3>Display naam: {{ gebruiker[0] }}</h3>
+                <p>Gebruikersnaam: {{ gebruiker[1] }} </p>
+                <p>Wachtwoord: {{ gebruiker[2] }}</p>
+                <a href="{{ url_for('edit_gebruiker', teacher_id=gebruiker[3]) }}" class="button-edit">
+                    <img src="../static/edit_button.png" alt="bewerken" class="bewerk-img">
+                </a>
+                <button type="submit" class="button-delete" class="button-delete"> </a>
+                    <img src="../static/delete_button.png" alt="verwijder" class="delete-img">
+                </button>
+            </form>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>

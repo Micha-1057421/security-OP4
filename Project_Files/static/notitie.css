@@ -1,0 +1,42 @@
+body {
+    align-items: center;
+    justify-content: center;
+    place-content: center;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #f1f1f1;
+    font-family: 'Nunito';
+}
+.title {
+    text-align: center;
+    height: 100px;
+    font-size: xx-large;
+    font-family: 'Nunito';
+}
+.info {
+    text-align: center;
+    font-size: larger;
+    font-family: 'Nunito';
+
+}
+.questions {
+    padding-top: 100px;
+    text-align: center;
+    font-size: larger;
+    font-family: 'Nunito';
+}
+.generatie {
+    background-color: #4075ea;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    height: 20px;
+    font-family: 'Nunito';
+    font-size: 10px;
+    cursor: pointer;
+    padding: 0 10px;
+    margin: 0 10px;
+    text-decoration: none;
+    text-align: center;
+}
+

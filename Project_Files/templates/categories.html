@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>categories</title>
+    <link rel="stylesheet" href="../static/categoriesstyle.css" type="text/css">
+</head>
+<body>
+{% include 'navbar1.html' %}
+{% include 'navbar2.html' %}
+<form method="post" action="/categories/">
+    <h1><label for= "omschrijving">U kunt hier een categorie toevoegen</label></h1>
+    <br>
+    <input type="text" name="omschrijving" required
+                placeholder="omschrijving"
+                value="{{ omschrijving }}"> </input>
+    <br><br>
+    <button type="submit">Toevoegen</button>
+</form>
+{% block content %}
+    {% if categories_list %}
+        <div class="categories-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="categoryidcss">Category ID</th>
+                        <th class="omschrijvingcss">Omschrijving</th>
+                        <th class="datecreatedcss">Date Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for category in categories_list %}
+                        <tr>
+                            <td class="categorydata"> {{ category.category_id }}</td>
+                            <td> {{ category.omschrijving }}</td>
+                            <td> {{ category.date_created }}</td>
+                            <td>
+                            <a href="{{ url_for('bewerk_categorie_pagina', category_id=category.category_id) }}">
+                                <img src="../static/edit_button.png" alt="bewerken" class="editimg"></a>
+                            </td>
+                            <td>
+                                <form method="POST" action="{{ url_for('verwijder_categorie_main', category_id=category.category_id) }}">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="button-delete">
+                                        <img src="../static/delete_button.png" alt="verwijder" class="delete-img">
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div>No categories available.</div>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

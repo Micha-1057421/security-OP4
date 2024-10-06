@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test-Correct Login</title>
+    <link rel="stylesheet" href="../static/Homepage_style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="https://welcome.test-correct.nl/img/icons/Logo-Test-Correct-recolored-icon-only.svg">
+    <link rel="stylesheet" href="../static/loginstyle.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="https://welcome.test-correct.nl/svg/logos/Logo-Test-Correct-2.svg">
+    </div>
+    <div class="center">
+        <h1>Inloggen</b></h1>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+        <form action="/login" method="POST">
+            <div class="txt_field">
+                <input type="text" id="username" name="username" required>
+                <span></span>
+                <label for="Username">Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" id="teacher_password" name="teacher_password" required>
+                <span></span>
+                <label for="teacher_password">Password</label>
+            </div>
+            <br>
+            <input class="l_button" type="submit" name="submit" value="Inloggen">
+        </form>
+    </div>
+</body>
+</html>

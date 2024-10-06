@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Bewerk Gebruiker</title>
+    <link rel="stylesheet" href="../static/categoriesstyle.css" type="text/css">
+</head>
+<body>
+{% include 'navbar1.html' %}
+{% include 'navbar2.html' %}
+
+{% block content %}
+    <h1>Bewerk Gebruiker</h1>
+    <form class="gebruiker" method="post">
+        <br>
+        <label for= "username">Gebruikersnaam</label>
+        <br>
+        <input type="text" name="username" required
+               placeholder="Gebruikersnaam"
+               value="{{ request.form['username'] }}"></input>
+        <br>
+        <label for= "teacher_password">Wachtwoord</label>
+        <br>
+        <input type="text" name="teacher_password" required
+               placeholder="Wachtwoord"
+               value="{{ request.form['teacher_password'] }}"></input>
+        <br>
+        <label for= "display_name">Display naam</label>
+        <br>
+        <input type="text" name="display_name" required
+               placeholder="Display naam"
+               value="{{ request.form['display_name'] }}"></input>
+        <br>
+        <button type="submit">Aanpassen</button>
+    </form>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url("../static/fonts/Nunito-Regular.ttf");
+    src: url("../static/fonts/Nunito-Bold.ttf")
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    outline: none;
+    border: 0px;
+    padding-top: 14px;
+}
+
+input {
+    width: 10%;
+    padding: 8px;
+    padding-top: 10px;
+    margin: 5px 0px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px;
+}
+.aanmaken-teacher {
+    width: 100px;
+    height: 60px;
+    background-color: #3DBB57;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    outline: none;
+    border: 0px;
+    font-family: 'Nunito';
+
+}
+
+.teachers-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Nunito';
+    justify-content: space-evenly;
+    font-size: 15px;
+    outline: none;
+    border: 0px;
+    border-radius: 10px;
+}
+
+.gebruiker {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid;
+    width: 100%;
+    font-family: 'Nunito';
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+body {
+  margin: 0;
+}
+
+.button-delete {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    padding-right: 20px;
+    margin-top: 15px;
+}
+.delete-img {
+    width: 30px;
+    height: 30px;
+}
+
+.button-edit {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    padding-right: 20px;
+    margin-top: 15px;
+}
+
+.bewerk-img{
+    width: 30px;
+    height: 30px;
+
+}

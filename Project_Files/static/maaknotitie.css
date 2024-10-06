@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url("../static/fonts/Nunito-Regular.ttf");
+    src: url("../static/fonts/Nunito-Bold.ttf")
+}
+
+body {
+  margin: 0;
+    font-family: 'Nunito'
+}
+
+form {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    outline: none;
+    border: 0px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    outline: none;
+    border: 0px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    outline: none;
+    border: 0px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    border: 0px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    border: 0px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    border: 0px;
+}
+
+button {
+    background-color: #3DBB57;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    outline: none;
+    border: 0px;
+}
+
+button:hover {
+    background-color: #45D85D;
+}
+
+form {
+    padding: 20px;
+    background-color: #F1F2F6;
+    border-radius: 10px;
+    border: 0px;
+}

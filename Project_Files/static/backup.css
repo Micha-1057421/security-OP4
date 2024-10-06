@@ -1,0 +1,76 @@
+.button-nieuwe-notitie {
+  background-color: #4075ea;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 30px;
+  font-family: 'Nunito';
+  color: #FFFFFF;
+  margin-left: 2%;
+  padding: 0px 30px;
+  top: -81px;
+  position: relative;
+}
+
+.form-controle{
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  cursor: text;
+  height: 30px;
+  font-family: 'Nunito';
+  margin-left: 72%;
+  padding: 0px 30px;
+  top: 1%;
+  position: relative;
+}
+
+form .button-search{
+  background-color: #3DBB57;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 30px;
+  font-family: 'Nunito';
+  color: #FFFFFF;
+  margin-left: 90%;
+  padding: 0px 30px;
+  top: -40px;
+  position: relative;
+ }
+
+.button-Filter {
+  background-color: #3DBB57;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 30px;
+  font-family: 'Nunito';
+  color: #FFFFFF;
+  margin-left: 2%;
+  padding: 0px 30px;
+  top: -81px;
+  position: relative;
+}
+
+section h3 {
+  font-family: "Nunito";
+  font-size: 30px;
+  text-align: center;
+}
+section p {
+  font-size: 20px;
+  font-family: 'Nunito';
+  margin-left: 25%;
+}
+
+.Layout_Notities {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-family: 'Nunito';
+}

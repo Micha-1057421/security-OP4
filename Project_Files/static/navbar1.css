@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url("../static/fonts/Nunito-Regular.ttf");
+    src: url("../static/fonts/Nunito-Bold.ttf")
+}
+.logo-test-correct {
+  margin-left: 15%;
+}
+.logo-test-correct-homepage {
+  margin-left: 15%;
+  position: fixed;
+
+}
+
+.message {
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Nunito';
+  background-color: #f3f3f3
+}
+
+h1 {
+  font-family: 'Nunito';
+
+}
+
+nav {
+  background-color: #004DF5;
+  box-shadow: 0px 5px 9px black;
+  top: -25px;
+  position: relative;
+  padding-bottom: -40px;
+  height: 50px;
+  width: 100%;
+}
+
+.Test-Correct-button-bar-item-notities:hover{
+    color: #041F74;
+}
+.In_Uitloggen:hover {
+    color: #041F74;
+}
+
+.button-log-uit {
+  margin-left: 68%;
+  top: -40px;
+  position: relative;
+  background-color:  #041F74;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 30px;
+  font-family: 'Nunito';
+  color: #FFFFFF;
+  padding: 0px 30px;
+  font-weight: bold;
+}

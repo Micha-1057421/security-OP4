@@ -1,0 +1,4 @@
+.idea
+website/
+__pycache__
+config.py

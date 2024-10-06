@@ -1,0 +1,26 @@
+.button-container{
+  display: flex;
+  align-items: center;
+}
+.back-button {
+  width: 50px;
+  height: auto;
+  position:absolute;
+  top: 0px;
+  left: 20%;
+  pointer-events: auto;
+}
+
+.button-text {
+  font-family: 'Nunito';
+  font-size: 30px;
+  margin-left: 6%;
+  position:relative;
+  top: 5px;
+  color: white;
+}
+
+.back-button-link {
+  display: inline-block;
+  pointer-events: auto;
+}
