@@ -1,4 +1,5 @@
 import sqlite3
+import bcrypt
 from flask import abort
 
 def databaseinladen():
@@ -12,6 +13,14 @@ def delete(note_id):
     conn.commit()
     return True
 
+def hash_password(password):
+    if isinstance(password, str):
+        password = password.encode('utf-8')
+    salt = bcrypt.gensalt()
+    return bcrypt.hashpw(password, salt)
+
+def check_password(hashed_password, password):
+    return bcrypt.checkpw(password.encode('utf-8'), hashed_password)
 
 def Login(username, password):
     query = 'SELECT username, teacher_password, teacher_id FROM teachers WHERE username=? AND teacher_password=?;'
@@ -19,8 +28,16 @@ def Login(username, password):
     cursor = conn.execute(query, (username, password))
     user = cursor.fetchone()
     if user is None:
+        print('User not found.')
         return False
-    return user[2]
+    
+    hashed_password = user[1]
+    print(f"Hashed password from DB: {hashed_password}")
+    print(f"User provided password: {password}")
+    if check_password(hashed_password, password):
+        return user[2]
+    print("Password does not match.")
+    return False
 
 def check_admin(teacher_id):
     print(teacher_id)
@@ -78,9 +95,10 @@ def get_teacher():
     return teachers
 
 def adminmenu(username, teacher_password, display_name):
+    hashed_password = hash_password(teacher_password)
     query3 = 'INSERT INTO teachers (username, teacher_password, display_name) VALUES (?,?,?)'
     conn = databaseinladen()
-    conn.execute(query3, (username, teacher_password, display_name))
+    conn.execute(query3, (username, hashed_password, display_name))
     conn.commit()
 
 def adminscherm():
@@ -203,3 +221,22 @@ def save_question(note_id, exam_question):
     conn.execute(query, (note_id, exam_question))
     conn.commit()
 
+def update_user_password(teacher_id, new_password):
+    hashed_password = hash_password(new_password)
+    query = 'UPDATE teachers SET teacher_password = ? WHERE teacher_id = ?'
+    conn = databaseinladen()
+    conn.execute(query, (hashed_password, teacher_id))
+    conn.commit()
+
+def upgrade_existing_passwords():
+    query = 'SELECT teacher_id, teacher_password FROM teachers'
+    conn = databaseinladen()
+    cursor = conn.execute(query)
+    users = cursor.fetchall()
+
+    for user in users:
+        teacher_id, plain_password = user
+        if len(plain_password) < 60:
+            print(f"Upgrading password for teacher_id {teacher_id}: {plain_password}")
+            hashed_password = hash_password(plain_password)
+            update_user_password(teacher_id, hashed_password)

@@ -310,5 +310,6 @@ def generate_question(note_id):
 
 
 if __name__ == "__main__":
+    DB.upgrade_existing_passwords()
     app.debug = True
     app.run()
